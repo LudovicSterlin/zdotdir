@@ -9,15 +9,30 @@ export DOTFILES=${DOTFILES:-~/.config/dotfiles}
 export EDITOR=vim
 export VISUAL=code
 
+# pnpm
+export PNPM_HOME="$XDG_CONFIG_HOME/pnpm"
+
+# poetry
+export POETRY_HOME="$XDG_CONFIG_HOME/poetry"
+
+# nvm
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # go
 export GLOBALGOPATH=$HOME/Projects/golang
 export GOPATH=$GLOBALGOPATH
 
-# groovy
-if [[ "$OSTYPE" == darwin* ]]; then
-  export GROOVY_HOME=$HOMEBREW_PREFIX/opt/groovy/libexec  # per homebrew
-  export GROOVY_TURN_OFF_JAVA_WARNINGS="true"
-fi
+# # go
+# export GLOBALGOPATH=$HOME/Projects/golang
+# export GOPATH=$GLOBALGOPATH
+
+# # groovy
+# if [[ "$OSTYPE" == darwin* ]]; then
+#   export GROOVY_HOME=$HOMEBREW_PREFIX/opt/groovy/libexec  # per homebrew
+#   export GROOVY_TURN_OFF_JAVA_WARNINGS="true"
+# fi
 
 # perl
 # if [[ "$OSTYPE" == darwin* ]]; then
@@ -37,9 +52,15 @@ path=(
   /opt/{homebrew,local}/{,s}bin(N)
   /usr/local/{,s}bin(N)
 
-  # emacs
-  $HOME/.emacs.d/bin(N)
-  $HOME/.config/emacs/bin(N)
+  # # emacs
+  # $HOME/.emacs.d/bin(N)
+  # $HOME/.config/emacs/bin(N)
+
+  # pnpm
+  $PNPM_HOME
+
+  # poetry
+  $POETRY_HOME/bin
 
   # apps
   $HOMEBREW_PREFIX/opt/curl/bin(N)

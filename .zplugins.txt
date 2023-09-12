@@ -4,7 +4,7 @@ mattmc3/zephyr path:plugins/zfunctions
 
 # prompt plugins
 # sindresorhus/pure post:init-pure
-# romkatv/powerlevel10k
+romkatv/powerlevel10k
 mattmc3/zephyr path:plugins/prompt
 
 # utility plugins
@@ -23,6 +23,8 @@ ohmyzsh/ohmyzsh path:plugins/copypath
 ohmyzsh/ohmyzsh path:plugins/extract
 ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 ohmyzsh/ohmyzsh path:plugins/magic-enter post:init-magic-enter
+ohmyzsh/ohmyzsh path:plugins/git
+# ohmyzsh/ohmyzsh path:plugins/macos
 
 # Prezto plugins
 # sorin-ionescu/prezto path:modules/helper/functions kind:autoload
@@ -50,17 +52,22 @@ rummik/zsh-tailf
 mattmc3/zman
 agkozak/zsh-z post:init-zshz
 
+# Navigation plugins
+DarrinTisdale/zsh-aliases-exa
+jirutka/zsh-shift-select
+
 # completion plugins
 zsh-users/zsh-completions path:src kind:fpath
 mattmc3/zephyr path:plugins/completion
 
 # deferred plugins
 # olets/zsh-abbr kind:defer
-zsh-users/zsh-autosuggestions kind:defer post:init-autosuggestions
+# zsh-users/zsh-autosuggestions kind:defer post:init-autosuggestions
+zsh-users/zsh-autosuggestions
 zdharma-continuum/fast-syntax-highlighting kind:defer
 
 # final plugins
 mattmc3/zephyr path:plugins/confd
-zsh-users/zsh-history-substring-search post:init-history-substring-search
+zsh-users/zsh-history-substring-search
 
 # vim: ft=zsh sw=2 ts=2 et

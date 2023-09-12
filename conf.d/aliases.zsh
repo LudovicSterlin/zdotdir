@@ -33,8 +33,8 @@ GREP_EXCL=(.bzr CVS .git .hg .svn .idea .tox)
 alias grep="${aliases[grep]:-grep} --exclude-dir={\${(j.,.)GREP_EXCL}}"
 
 # more ways to ls
-alias ll='ls -lh'
-alias la='ls -lAh'
+# alias ll='ls -lh'
+# alias la='ls -lAh'
 alias ldot='ls -ld .*'
 
 # fix typos
@@ -110,3 +110,45 @@ alias pyva="source .venv/bin/activate"
 # todo-txt
 alias t="todo.sh"
 alias todos="$VISUAL $HOME/Desktop/todo.txt"
+
+
+# ------------------------------------ Git ----------------------------------- #
+## cfg alias for my dotfiles bare repo
+alias cfg='/usr/bin/git --git-dir=/Users/ludovic/.cfg/ --work-tree=/Users/ludovic'
+## Override gcm="git checkout $(git_main_branch)"
+alias gcm="git checkout $(git_main_branch) && git pull"
+## Override gcd="git checkout $(git_develop_branch)"
+alias gcd="git checkout $(git_develop_branch) && git pull"
+## Stash
+alias gstm="git stash push -m"
+alias gstwip="git stash push -m \"wip\""
+## branch
+alias gbv='git branch -vv'
+# ----------------------------------- Conda ---------------------------------- #
+alias cact="conda activate"
+alias cdact="conda deactivate"
+# ----------------------------------- Mongo ---------------------------------- #
+alias mgstart="brew services start mongodb-community@5.0"
+alias mgstop="brew services stop mongodb-community@5.0"
+alias mgstatus="ps aux | grep -v grep | grep mongod"
+# ---------------------------------- Docker ---------------------------------- #
+alias dcupd="docker-compose up -d"
+alias dcup="docker-compose up"
+alias doc="docker-compose"
+alias dlf="docker logs -f"
+alias dlft="docker logs -f --tails 10"
+# ----------------------------------- lerna ---------------------------------- #
+alias lrun="lerna bootstrap && lerna run dev --stream"
+# --------------------------------- Prettier --------------------------------- #
+alias ptt="npx prettier --write"
+# -------------------------------- Navigation -------------------------------- #
+alias hhome="cd /Users/ludovic/HINFACT/"
+alias proddev="\"/Users/ludovic/Library/CloudStorage/OneDrive-SharedLibraries-HINFACT/Hinfact - Interne - Knowledge Management/Product Development\""
+# ----------------------------------- java ----------------------------------- #
+alias tcprun="java -classpath bin/ SendOnTCP"
+# ------------------------------------ Fun ----------------------------------- #
+alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;33" grep --color "[^ ]"'
+# git-of-theseus
+alias stplot='git-of-theseus-stack-plot'
+alias lplot='git-of-theseus-line-plot'
+alias suplot='git-of-theseus-survival-plot'

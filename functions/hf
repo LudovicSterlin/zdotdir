@@ -1,0 +1,15 @@
+#!/bin/zsh
+##? hf - use @hinfact/cli
+##? Avoid chocoblast
+##? And rickroll the chocobalster for fun. source: https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh
+##?
+##? usage:
+##?   hf [<cmd>]
+
+# hf() {
+    if [[ $@ == "choco" ]]; then
+        command ~/roll.sh && echo "Got you 😎"
+    else
+        command hf "$@"
+    fi
+# }

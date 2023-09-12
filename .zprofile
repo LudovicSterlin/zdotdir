@@ -1,6 +1,7 @@
 #!/bin/zsh
 #
 # .zprofile - Zsh file loaded on login.
+# .zprofile - Zsh file loaded on login.
 #
 
 #

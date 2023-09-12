@@ -1,5 +1,5 @@
 # emacs keybindings
-bindkey -e
+# bindkey -e
 
 # line cursor
 printf '\e[6 q'
