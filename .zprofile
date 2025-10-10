@@ -83,3 +83,9 @@ fi
 
 # Make Apple Terminal behave
 export SHELL_SESSIONS_DISABLE=1
+
+# Created by `pipx` on 2024-01-04 09:31:55
+export PATH="$PATH:/Users/ludovic/.local/bin"
+
+# Latex
+export PATH="$PATH:/Library/TeX/texbin"

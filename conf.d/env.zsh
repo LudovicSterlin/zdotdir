@@ -6,8 +6,11 @@
 export DOTFILES=${DOTFILES:-~/.config/dotfiles}
 
 # editors
-export EDITOR=vim
+export EDITOR=code
 export VISUAL=code
+
+# hinfact
+export HOME_HINFACT="/Users/${USER}/HINFACT"
 
 # pnpm
 export PNPM_HOME="$XDG_CONFIG_HOME/pnpm"
@@ -20,9 +23,11 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# go
-export GLOBALGOPATH=$HOME/Projects/golang
-export GOPATH=$GLOBALGOPATH
+
+# aws
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
+
 
 # # go
 # export GLOBALGOPATH=$HOME/Projects/golang

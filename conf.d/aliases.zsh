@@ -124,31 +124,44 @@ alias gstm="git stash push -m"
 alias gstwip="git stash push -m \"wip\""
 ## branch
 alias gbv='git branch -vv'
+
 # ----------------------------------- Conda ---------------------------------- #
 alias cact="conda activate"
 alias cdact="conda deactivate"
+
 # ----------------------------------- Mongo ---------------------------------- #
 alias mgstart="brew services start mongodb-community@5.0"
 alias mgstop="brew services stop mongodb-community@5.0"
 alias mgstatus="ps aux | grep -v grep | grep mongod"
+
 # ---------------------------------- Docker ---------------------------------- #
-alias dcupd="docker-compose up -d"
-alias dcup="docker-compose up"
-alias doc="docker-compose"
+alias dcupd="docker compose up -d"
+alias dcup="docker compose up"
+alias doc="docker compose"
 alias dlf="docker logs -f"
 alias dlft="docker logs -f --tails 10"
+
+# ----------------------------------- pnpm ----------------------------------- #
+alias pb="pnpm build"
+alias p="pnpm"
+
 # ----------------------------------- lerna ---------------------------------- #
 alias lrun="lerna bootstrap && lerna run dev --stream"
+
 # --------------------------------- Prettier --------------------------------- #
 alias ptt="npx prettier --write"
+
 # -------------------------------- Navigation -------------------------------- #
 alias hhome="cd /Users/ludovic/HINFACT/"
 alias proddev="\"/Users/ludovic/Library/CloudStorage/OneDrive-SharedLibraries-HINFACT/Hinfact - Interne - Knowledge Management/Product Development\""
+
 # ----------------------------------- java ----------------------------------- #
 alias tcprun="java -classpath bin/ SendOnTCP"
+
 # ------------------------------------ Fun ----------------------------------- #
 alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;33" grep --color "[^ ]"'
-# git-of-theseus
+
+# ------------------------------ git-of-theseus ------------------------------ #
 alias stplot='git-of-theseus-stack-plot'
 alias lplot='git-of-theseus-line-plot'
 alias suplot='git-of-theseus-survival-plot'

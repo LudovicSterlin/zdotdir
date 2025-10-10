@@ -53,7 +53,7 @@ mattmc3/zman
 agkozak/zsh-z post:init-zshz
 
 # Navigation plugins
-DarrinTisdale/zsh-aliases-exa
+# DarrinTisdale/zsh-aliases-exa
 jirutka/zsh-shift-select
 
 # completion plugins
@@ -71,3 +71,5 @@ mattmc3/zephyr path:plugins/confd
 zsh-users/zsh-history-substring-search
 
 # vim: ft=zsh sw=2 ts=2 et
+
+Dbz/kube-aliases
