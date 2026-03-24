@@ -28,6 +28,10 @@ export NVM_DIR="$HOME/.config/nvm"
 export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
 export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
 
+#
+# secrets
+#
+[[ -f ~/.secrets ]] && source ~/.secrets
 
 # # go
 # export GLOBALGOPATH=$HOME/Projects/golang
@@ -74,6 +78,12 @@ path=(
   $HOMEBREW_PREFIX/lib/ruby/gems/*/bin(N)
   $HOME/.gem/ruby/*/bin(N)
   $HOMEBREW_PREFIX/share/npm/bin(N)
+
+  # latex
+  /Library/TeX/texbin
+
+  # Go
+  $HOME/go/bin:$PATH
 
   $path
 )

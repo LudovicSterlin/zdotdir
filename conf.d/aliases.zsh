@@ -153,7 +153,6 @@ alias ptt="npx prettier --write"
 
 # -------------------------------- Navigation -------------------------------- #
 alias hhome="cd /Users/ludovic/HINFACT/"
-alias proddev="\"/Users/ludovic/Library/CloudStorage/OneDrive-SharedLibraries-HINFACT/Hinfact - Interne - Knowledge Management/Product Development\""
 
 # ----------------------------------- java ----------------------------------- #
 alias tcprun="java -classpath bin/ SendOnTCP"
@@ -165,3 +164,12 @@ alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS co
 alias stplot='git-of-theseus-stack-plot'
 alias lplot='git-of-theseus-line-plot'
 alias suplot='git-of-theseus-survival-plot'
+
+
+# ---------------------------------- kubectl --------------------------------- #
+alias kconfig='export KUBECONFIG=~/.kube/config'
+alias kshared='export KUBECONFIG=~/.kube/shared-config'
+alias kairbus='export KUBECONFIG=~/.kube/airbus-config'
+
+# ---------------------------------- chrome --------------------------------- #
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'

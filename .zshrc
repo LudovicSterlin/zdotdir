@@ -115,3 +115,6 @@ export PATH="$PATH:/Users/ludovic/.local/bin"
 
 # Latex
 export PATH="$PATH:/Library/TeX/texbin"
+
+# Go
+export PATH="$HOME/go/bin:$PATH"
