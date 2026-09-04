@@ -194,4 +194,4 @@ _poetry_5947d8c68b7e5f85_complete()
 }
 
 _poetry_5947d8c68b7e5f85_complete "$@"
-compdef _poetry_5947d8c68b7e5f85_complete /Users/ludovic/.config/poetry/venv/bin/poetry
+compdef _poetry_5947d8c68b7e5f85_complete /Users/ludovicsterlin/.config/poetry/venv/bin/poetry
