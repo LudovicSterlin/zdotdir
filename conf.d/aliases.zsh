@@ -114,7 +114,7 @@ alias todos="$VISUAL $HOME/Desktop/todo.txt"
 
 # ------------------------------------ Git ----------------------------------- #
 ## cfg alias for my dotfiles bare repo
-alias cfg='/usr/bin/git --git-dir=/Users/ludovic/.cfg/ --work-tree=/Users/ludovic'
+alias cfg='/usr/bin/git --git-dir=/Users/ludovicsterlin/.cfg/ --work-tree=/Users/ludovicsterlin'
 ## Override gcm="git checkout $(git_main_branch)"
 alias gcm="git checkout $(git_main_branch) && git pull"
 ## Override gcd="git checkout $(git_develop_branch)"
@@ -151,12 +151,6 @@ alias lrun="lerna bootstrap && lerna run dev --stream"
 # --------------------------------- Prettier --------------------------------- #
 alias ptt="npx prettier --write"
 
-# -------------------------------- Navigation -------------------------------- #
-alias hhome="cd /Users/ludovic/HINFACT/"
-
-# ----------------------------------- java ----------------------------------- #
-alias tcprun="java -classpath bin/ SendOnTCP"
-
 # ------------------------------------ Fun ----------------------------------- #
 alias matrix='LC_ALL=C tr -c "[:digit:]" " " < /dev/urandom | dd cbs=$COLUMNS conv=unblock | GREP_COLOR="1;33" grep --color "[^ ]"'
 
@@ -168,8 +162,6 @@ alias suplot='git-of-theseus-survival-plot'
 
 # ---------------------------------- kubectl --------------------------------- #
 alias kconfig='export KUBECONFIG=~/.kube/config'
-alias kshared='export KUBECONFIG=~/.kube/shared-config'
-alias kairbus='export KUBECONFIG=~/.kube/airbus-config'
 
 # ---------------------------------- chrome --------------------------------- #
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'

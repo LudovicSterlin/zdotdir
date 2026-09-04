@@ -47,8 +47,6 @@ alias tfdy='terraform destroy -auto-approve'
 alias tfinu='terraform init -upgrade'
 alias tfpde='terraform plan --destroy'
 
-# Hinfact custom aliases
-alias tfav='terraform apply -var-file="./deployments/$(terraform workspace show).hinfact.com.tfvars.json"'
-alias tfpv='terraform plan -var-file="./deployments/$(terraform workspace show).hinfact.com.tfvars.json"'
+# Terraform custom aliases
 alias tfojson="terraform output -json"
 alias tffr="terraform fmt -recursive"

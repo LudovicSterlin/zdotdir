@@ -9,9 +9,6 @@ export DOTFILES=${DOTFILES:-~/.config/dotfiles}
 export EDITOR=code
 export VISUAL=code
 
-# hinfact
-export HOME_HINFACT="/Users/${USER}/HINFACT"
-
 # pnpm
 export PNPM_HOME="$XDG_CONFIG_HOME/pnpm"
 
@@ -19,14 +16,14 @@ export PNPM_HOME="$XDG_CONFIG_HOME/pnpm"
 export POETRY_HOME="$XDG_CONFIG_HOME/poetry"
 
 # nvm
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.config/nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
 # aws
-export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
-export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
+# export AWS_CONFIG_FILE="$XDG_CONFIG_HOME/aws/config"
+# export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME/aws/credentials"
 
 #
 # secrets

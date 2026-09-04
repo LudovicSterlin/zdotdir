@@ -34,10 +34,7 @@ function gcrbmf() {
 compdef _git gcrbmf=git-checkout
 
 # Jump
-eval "$(jump shell)"
-
-# The Fuck
-eval $(thefuck --alias)
+eval "$(jump shell zsh)"
 
 #
 # terraform
@@ -48,16 +45,13 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 function terraform() { echo "+ terraform $@"; command terraform $@; }
 
 # nvm
-autoload -U add-zsh-hook
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc > /dev/null
+# autoload -U add-zsh-hook
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc > /dev/null
 
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
-
-# hf cli
-HF_AC_ZSH_SETUP_PATH=/Users/ludovic/Library/Caches/hf/autocomplete/zsh_setup && test -f $HF_AC_ZSH_SETUP_PATH && source $HF_AC_ZSH_SETUP_PATH; # hf autocomplete setup
 
 #
 # keybindings
@@ -70,7 +64,6 @@ eval
 # helm
 #
 source <(helm completion zsh)
-helm repo update hinfact > /dev/null
 
 #
 # kubectl
