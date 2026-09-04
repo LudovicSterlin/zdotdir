@@ -12,6 +12,15 @@ zstyle ':antidote:bundle' use-friendly-names 'yes'
 zstyle ':antidote:plugin:*' defer-options '-p'
 
 #
+# Prompt
+#
+
+# Use powerlevel10k. Without this, zephyr's prompt plugin defaults to
+# (starship zephyr), and since starship isn't installed it calls the builtin
+# `prompt` with an unknown theme, which dumps usage text to the console.
+zstyle ':zephyr:plugin:prompt' theme 'p10k'
+
+#
 # Editor
 #
 
