@@ -55,11 +55,17 @@ zsh_plugins=${ZDOTDIR:-~}/.zplugins.zsh
 fpath+=(${ZDOTDIR:-~}/.antidote/functions)
 autoload -Uz $fpath[-1]/antidote
 
+# Expand $VARs in .zplugins.txt (so `$ZDOTDIR/plugins/foo` lines resolve).
+# Pure zsh, so we don't depend on gettext's envsubst being installed.
+.zplugins-expand() {
+  local line
+  while IFS= read -r line; do print -r -- ${(e)line}; done <${zsh_plugins:r}.txt
+}
+
 # Generate static file in a subshell when .zsh_plugins.txt is updated.
 if [[ ! $zsh_plugins -nt ${zsh_plugins:r}.txt ]] || [[ ! -s $zsh_plugins ]]; then
   source $ZDOTDIR/.antidote/antidote.zsh
-  #(antidote bundle <${zsh_plugins:r}.txt >|$zsh_plugins)
-  (envsubst <${zsh_plugins:r}.txt | antidote bundle >|$zsh_plugins)
+  (.zplugins-expand | antidote bundle >|$zsh_plugins)
 fi
 
 # Source your static plugins file.
@@ -71,7 +77,7 @@ source $zsh_plugins
 #
 
 # Local settings/overrides
-[[ -f $ZDOTDIR/.zshrc_local ]] && $ZDOTDIR/.zshrc_local
+[[ -f $ZDOTDIR/.zshrc_local ]] && source $ZDOTDIR/.zshrc_local
 
 
 #
@@ -87,23 +93,26 @@ true
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/ludovic/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/ludovic/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/ludovic/miniconda3/etc/profile.d/conda.sh"
+# Guarded so this is a no-op on hosts without miniconda installed.
+if [ -d "$HOME/miniconda3" ]; then
+    __conda_setup="$("$HOME/miniconda3/bin/conda" 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
     else
-        export PATH="/Users/ludovic/miniconda3/bin:$PATH"
+        if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "$HOME/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="$HOME/miniconda3/bin:$PATH"
+        fi
     fi
+    unset __conda_setup
+    conda deactivate
 fi
-unset __conda_setup
-conda deactivate
 # <<< conda initialize <<<
 
 
 # pnpm
-export PNPM_HOME="/Users/ludovic/.config/pnpm"
+export PNPM_HOME="/Users/ludovicsterlin/.config/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -111,10 +120,11 @@ esac
 # pnpm end
 
 # Created by `pipx` on 2024-01-04 09:31:55
-export PATH="$PATH:/Users/ludovic/.local/bin"
+export PATH="$PATH:/Users/ludovicsterlin/.local/bin"
 
 # Latex
 export PATH="$PATH:/Library/TeX/texbin"
 
 # Go
 export PATH="$HOME/go/bin:$PATH"
+export PATH=$PATH:/Users/ludovicsterlin/src/alan-apps/extra-tools/bin
